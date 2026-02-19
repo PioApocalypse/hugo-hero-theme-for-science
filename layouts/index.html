@@ -23,10 +23,10 @@
 {{ $reusablePages := $headless.Resources.ByType "page" }}
 {{ $reusablePages := sort $reusablePages ".Params.weight" }}
 {{ range first 1 $reusablePages }}
-<div id="home" class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ .Params.background | relURL }}');">
+<div id="home" class="strip bg-cover bg-position-top bg-overlay" style="background: linear-gradient(-90deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255)), url('{{ .Params.background | relURL }}'); background-size: cover; background-blend-mode: normal;">
   <div class="container pt-17 pb-17">
     <div class="row">
-      <div class="col-12 col-md-6 offset-md-6">
+      <div class="col-12 col-md-6">
         <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
         <p>{{ .Content }}</p>
         <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
@@ -56,7 +56,7 @@
 {{end}}
 
 {{ range first 1 (after 1 $reusablePages) }}
-<div id="home" class="strip bg-primary bg-cover bg-position-top bg-overlay" style='background-image: url("{{ .Params.background | relURL }}");'>
+<div id="home_1" class="strip bg-primary bg-cover bg-position-top bg-overlay" style='background-image: url("{{ .Params.background | relURL }}");'>
   <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 text-center text-white">

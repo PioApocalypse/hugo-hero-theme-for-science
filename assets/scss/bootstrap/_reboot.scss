@@ -49,7 +49,8 @@
 body {
   margin: 0; // 1
   font-family: var(--#{$prefix}body-font-family);
-  @include font-size(var(--#{$prefix}body-font-size));
+  font-size: 1.2rem;
+  // @include font-size(var(--#{$prefix}body-font-size));
   font-weight: var(--#{$prefix}body-font-weight);
   line-height: var(--#{$prefix}body-line-height);
   color: var(--#{$prefix}body-color);
@@ -346,6 +347,29 @@ table {
   border-collapse: collapse;
 }
 
+// ED: aggiunge classi grid-rows/columns/all per attributo tabella adoc "grid"
+table.grid-all th,
+table.grid-all td {
+  border: 1px solid gray;
+}
+
+table.grid-rows tr {
+  border: 1px solid gray;
+}
+
+table.grid-cols {
+  border: 1px solid gray;
+}
+table.grid-cols th,
+table.grid-cols td {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+// ED: striped tables
+th {background-color: #cfcfcf;}
+tr:nth-child(even) {background-color: #eeeeee;}
+
 caption {
   padding-top: $table-cell-padding-y;
   padding-bottom: $table-cell-padding-y;
@@ -372,6 +396,7 @@ th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
+  padding: 0.5rem;
 }
 
 

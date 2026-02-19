@@ -1,11 +1,20 @@
 .header {
   color: $primary;
-  background-color: #ffffff;
+  background-color: darken($navbar, 10%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 1px 15px rgba(50, 50, 93, 0.2);
   height: 60px;
+  span {
+    color: $white;
+    // font-weight: bold;
+    // text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; // alto contrasto pulsanti navbar
+  }
+  // grassetto quando il puntatore passa sui box del menù
+  [class^="menu-item-"]:hover {
+    font-weight: bold;
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -24,3 +33,15 @@
 //     }
 //   }
 // }
+
+// ED: stile testo "Open Access"
+
+.OA {
+  display: inline;
+  font-size: 80%;
+  font-weight: bolder;
+  color: darkgreen;
+  background-color: aquamarine;
+  padding: 0.2rem 1rem;
+  border-radius: 1.5rem;
+}

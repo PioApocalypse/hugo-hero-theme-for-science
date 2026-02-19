@@ -1,0 +1,9 @@
+<div class="bio_box" style="margin-bottom:1.2em;">
+  {{ $people := index site.Data.people }}
+  {{ range $people }}
+  <div class="bio_block" style="border: 2px solid grey; border-radius: 5px; padding: 0px 20px;">
+    <img src="/propic/{{ $people.pic }}" alt="propic" style="margin-top:0px; padding:0px 10px;">
+    <p>{{ $people.bio }}</p>
+  </div>
+  {{ end }}
+</div>

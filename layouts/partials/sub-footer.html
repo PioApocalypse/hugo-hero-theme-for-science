@@ -11,9 +11,14 @@
             <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
                 {{ .Site.Data.contact.email }}</a></li>
               {{ end }}
+            {{ if .Site.Data.contact.pec }}
+            <li><strong>PEC: </strong><a href="mailto:{{ .Site.Data.contact.pec }}">
+                {{ .Site.Data.contact.pec }}</a></li>
+              {{ end }}
           </ul>
           <ul>
-            <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
+            <li>Developed by <a href="https://damico.ing" target="_blank">Emanuele D'Amico</a> for <a href="https://www.spin.cnr.it" target="_blank">CNR-SPIN</a>.</li>
+            <li class="zerostatic">Built on <a href="https://gohugo.io" target="_blank">Hugo</a>, based on the <a href="https://github.com/zerostaticthemes/hugo-hero-theme" target="_blank">Hero Theme</a> by <a href="https://www.zerostatic.io" target="_blank">Zerostatic</a>.</li>
           </ul>
         </div>
       </div>

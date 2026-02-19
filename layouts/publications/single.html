@@ -1,0 +1,46 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+{{ if .Params.heroBackground }}
+  {{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "section" .Section "content" .)}}
+{{ end }}
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <h2>{{ .Title }}</h2>
+  <p>DOI: <a href="https://doi.org/{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a></p>
+  {{ if .Params.openaccess }}
+    <p class="OA">Open Access</p>
+  {{ end }}
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <div class="content mb-1"><b>{{.Params.authors}}</b></div>
+        <div class="content mb-3">Year of Publication: {{.Params.year}}</div>
+        <div class="content mb-3" style="text-align: justify;">{{.Content}}</div>
+
+        <!-- Immagine rappresentativa della pubblicazione -->
+        {{ if .Params.pubImage }}
+          <img class="img-fluid" style="margin-bottom: 1rem" src="{{ .Params.pubImage }}" alt="pub_image">
+        {{ end }}
+
+        <!-- Copyright per quei pezzi di merda dei publisher - venga presto il giorno in cui i soldi non li salveranno più dalle malattie -->
+        {{ if .Params.copyright }}
+          <div class="content mb-3" style="font-size: larger;">Copyright © {{ .Params.year }} {{ .Params.copyright }}</div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if hugo.IsServer }}
+  <script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+  {{ else }}
+  <script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

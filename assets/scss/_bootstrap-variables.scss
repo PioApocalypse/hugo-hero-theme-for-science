@@ -15,10 +15,20 @@ $container-max-widths: (
 
 $grid-gutter-width: 20px;
 
-$white: #ffffff;
+$white: #F7F5FB;
 $black: #000000;
-$primary: #1c3ed3;
-$secondary: #43454d;
+$primary: #084887;//{{ .Site.Params.colors.primary_color }};
+$navbar: #2F9C95;
+$secondary: #C96480;
+$auxiliary: #dabbba;// aggiunto io
+
+// Colori importanti:
+//  #edfa3e giallo ICRANet
+//  #fcffcc giallo sfondo vecchio sito
+//  #c62a1b rosso ICRANet
+//  #1c3ed3 deafult primary del tema Hero
+//  #6f63ad personal favorite come primary
+//  #5000a0 testo viola in giro per il sito
 
 // Links
 $link-color: $primary;
@@ -27,7 +37,7 @@ $link-hover-color: lighten($primary, 20%);
 $link-hover-decoration: underline;
 
 // Fonts
-$font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$font-family-base: 'Titillium Web', 'Open Sans', 'Helvetica Neue', sans-serif, Arial, -apple-system;
 $font-family-heading: 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-weight-thin: 200;

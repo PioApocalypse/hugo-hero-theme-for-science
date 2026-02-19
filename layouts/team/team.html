@@ -1,0 +1,53 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-pages-teamlayout{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+{{ if .Params.heroBackground }}
+    {{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+    {{ else }}
+    {{ partial "hero-image-setheight.html" (dict "background" "" "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+{{ end }}
+
+<!-- <div class="container pt-4 pt-md-10 pb-4 pb-md-10"> -->
+<div class="container mt-5">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-8">
+        <div class="work work-single">
+          <div class="content" style="font-size: 1.2rem;">{{.Content}}</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Dati (propic, bio e nome) nel file /data/people.yaml -->
+        {{ $people := index .Site.Data.people }}
+        <!-- Per ogni voce del file people, assegna gli attributi alla var. person e renderizza quanto segue -->
+        {{ range $index, $person := $people }}
+        <!-- Ogni persona è rappresentata da una riga con le classi 'col-12', 'd-flex' e 'mb-4' -->
+        
+        <div class="col-12 d-flex flex-column flex-md-row mb-4" style="border: 2px solid grey; border-radius: 0.6rem; margin-left: 0.5rem;">
+            <!-- Propic va in questo div. Per fare resize giocare sulle frazioni di 12 (es. 4-8, 3-9 etc.) -->
+            <div class="col-12 col-md-3">
+                <img src="/propic/{{ $person.pic }}" alt="propic" class="img-fluid rounded-circle" style="margin: 1rem; padding: 1rem;">
+            </div>
+            <!-- Nome e bio -->
+            <div class="col-12 col-md-9 mb-3 mb-md-0" style="padding: 1.5rem;">
+                <h2>{{ $person.name }}</h2>
+                <p style="text-align: justify;">{{ $person.bio | safeHTML }}</p>
+            </div>
+        </div>
+    {{ end }}
+</div>
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if hugo.IsServer }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}

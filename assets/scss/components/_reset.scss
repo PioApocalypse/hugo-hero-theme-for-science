@@ -1,6 +1,13 @@
 ul,
 ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: 2rem;
+}
+
+.main-menu {
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
