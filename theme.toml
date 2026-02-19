@@ -1,14 +1,19 @@
-name = "Hero"
+name = "Hero for Science"
 license = "MIT"
-licenselink = "https://github.com/zerostaticthemes/hugo-hero-theme/blob/master/LICENSE"
-description = "Hero is a multipurpose theme with fullscreen hero images and fullwidth sections. It contains content types for a business or portfolio site."
+licenselink = "https://github.com/PioApocalypse/hugo-hero-theme-for-science/blob/master/LICENSE"
+description = "Hero is a multipurpose theme with fullscreen hero images and fullwidth sections. This fork adapts the original theme from ZeroStatic to better suit (my personal) needs for Scientific Research Projects - e.g. by adding a workshop section."
 
-homepage = "https://github.com/zerostaticthemes/hugo-hero-theme"
-demosite = "https://hugo-hero.netlify.app/"
+homepage = "https://github.com/PioApocalypse/hugo-hero-theme-for-science"
 
-tags = ["responsive","minimal","clean","company","portfolio","bootstrap","zerostatic"]
+tags = ["responsive","minimal","clean","portfolio","bootstrap","zerostatic", "science", "fork"]
 features = ["services","work","fullwidth","hero images"]
 
 [author]
-  name = "Robert Austin"
+  name = "Emanuele D'Amico"
+  homepage = "https://damico.ing"
+
+[original]
+  name = "hugo-hero-theme"
+  author = "Robert Austin"
   homepage = "https://www.zerostatic.io"
+  repo = "https://github.com/zerostaticthemes/hugo-hero-theme/"
