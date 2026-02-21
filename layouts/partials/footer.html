@@ -12,7 +12,9 @@
           {{ end }}
           <ul class="footer-menu">
             <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            <li><a href="{{ .Site.BaseURL }}hq">Contact us</a></li>
+            {{ if .Site.Data.contact.email }}
+            <li><a href="mailto:{{ .Site.Data.contact.email }}hq">Contact us</a></li>
+            {{ end }}
             <li class="copyright">Website Under Apache 2.0 License</li>
             <!-- <li class="copyright">© {{ now.Format "2006" }} {{.Site.Title}}</li> -->
           </ul>
