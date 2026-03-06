@@ -1,4 +1,10 @@
-# Hugo Hero Theme
+# Hugo Hero Theme for Science
+
+Hero Theme for Science is a fork of the original Hugo Hero Theme by user ZeroStatic, heavily modified to better suit the needs of my research team and (hopefully) one day of other research teams.
+
+
+
+# Original theme
 
 Hero is a multi-page business theme with fullscreen hero images and fullwidth sections.
 
