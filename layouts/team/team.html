@@ -20,7 +20,7 @@
 
       <div class="row">
         <!-- Dati (propic, bio e nome) nel file /data/people.yaml -->
-        {{ $people := index .Site.Data.people }}
+        {{ $people := index hugo.Data.people }}
         <!-- Per ogni voce del file people, assegna gli attributi alla var. person e renderizza quanto segue -->
         {{ range $index, $person := $people }}
         <!-- Ogni persona è rappresentata da una riga con le classi 'col-12', 'd-flex' e 'mb-4' -->
