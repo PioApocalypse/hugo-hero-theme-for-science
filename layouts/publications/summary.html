@@ -8,7 +8,11 @@
     <h2 class="service-title">
       <a href="{{ .Permalink }}">({{ .Params.year }}) {{ .Title }}</a>
     </h2>
-    <p style="font-size: smaller;">DOI: <a href="https://doi.org/{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a></p>
+    {{ if .Params.doi }}
+      <p style="font-size: smaller;">DOI: <a href="https://doi.org/{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a></p>
+    {{ else }}
+      <p style="font-size: smaller;"><i>No DOI available at the moment.</i></p>
+    {{ end }}
     {{ if .Params.openaccess }}
       <div>
         <p class="OA">Open Access</p>
